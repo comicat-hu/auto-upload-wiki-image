@@ -8,7 +8,7 @@
 
 --
 
-* 需要更改index.js中的常數設定
+* 需要更改example.config.json中的設定, 並另存為config.json
 * 環境請使用 NodeJS v8.0.0以上
 * 安裝套件執行 `npm i`
 * 啟動程式執行 `npm start`

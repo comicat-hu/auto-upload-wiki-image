@@ -1,13 +1,14 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
+const config = require("./config.json");
 const recordPath = './.record'; // 記錄已上傳檔案用
-const filesPath = './files' // 放要上傳檔案的資料夾(監控的資料夾)
-const uploadURL = ''; // wiki的上傳檔案頁網址
-const loginURL = ''; // wiki的登入頁網址
-const username = ''; // wiki登入帳號
-const password = ''; // wiki登入密碼
+const filesPath = config.filePaths; // 放要上傳檔案的資料夾(監控的資料夾)
+const uploadURL = config.uploadURL; // wiki的上傳檔案頁網址
+const loginURL = config.loginURL; // wiki的登入頁網址
+const username = config.username; // wiki登入帳號
+const password = config.password; // wiki登入密碼
 const allowTypes = ['png','gif','jpg','jpeg','doc','xls','mpp','pdf','ppt','tiff','bmp','docx','xlsx','pptx','ps','odt','ods','odp','odg']; // wiki預設允許的格式
-const during = 20000; // 幾ms監控一次目標資料夾
+const during = config.during; // 幾ms監控一次目標資料夾
 var preList = '';
 
 function run() {
